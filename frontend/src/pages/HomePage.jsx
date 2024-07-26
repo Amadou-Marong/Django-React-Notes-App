@@ -39,26 +39,29 @@ const HomePage = () => {
 
     return (
         <div className="p-4">
-            <div className="mb-4">
-                <input
-                    type="text"
-                    placeholder="Search by title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="border p-2 mb-4 w-full"
-                />
-                <select
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    className="border p-2 mb-4 w-full"
-                >
-                    <option value="all">All Categories</option>
-                    {categories.map((cat) => (
-                        <option key={cat.id} value={cat.id}>
-                            {cat.name}
-                        </option>
-                    ))}
-                </select>
+            <div className="mb-4 p-4 flex items-center justify-center">
+                <div className="p-4 w-full max-w-xl h-auto shadow-lg rounded-lg">
+                    <input
+                        type="text"
+                        placeholder="Search by title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        className="border p-2 mb-4 w-full"
+                    />
+                    <select
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        className="border p-2 mb-4 w-full"
+                    >
+                        <option value="all">All Categories</option>
+                        {categories.map((cat) => (
+                            <option key={cat.id} value={cat.id}>
+                                {cat.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {notes.map(note => (

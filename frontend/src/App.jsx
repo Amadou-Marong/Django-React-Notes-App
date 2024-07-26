@@ -9,6 +9,7 @@ import PageNotFound from "./pages/PageNotFound";
 import CategoryList from "./components/CategoryList";
 import AddCategoryForm from "./components/AddCategoryForm";
 import CategoriesPage from "./pages/CategoriesPage";
+import EditCategoryForm from "./components/EditCategoryForm";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/edit/:id" element={<EditNotePage />} />
                 <Route path="/notes/:id" element={<NoteDetailPage />} />
                 <Route path="/categories" element={<CategoriesPage />} />
+                <Route path="/categories/edit/:id" element={<EditCategoryForm />} />
                 <Route path="/add-category" element={<AddCategoryForm />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
