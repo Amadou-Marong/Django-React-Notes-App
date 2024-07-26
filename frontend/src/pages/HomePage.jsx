@@ -39,8 +39,8 @@ const HomePage = () => {
 
     return (
         <div className="p-4">
-            <div className="mb-4 p-4 flex items-center justify-center">
-                <div className="p-4 w-full max-w-xl h-auto shadow-lg rounded-lg">
+            <div className="mb-4 p-4 flex items-center justify-center w-full">
+                <div className="p-4 w-full max-w-xl h-auto shadow-lg rounded-lg flex gap-4">
                     <input
                         type="text"
                         placeholder="Search by title"
