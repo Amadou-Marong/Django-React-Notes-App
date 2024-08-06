@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaInfoCircle, FaPlus, FaTags, FaList, FaBars } from "react-icons/fa";
+import { FaHome, FaInfoCircle, FaPlus, FaTags, FaList, FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +7,7 @@ const Sidebar = () => {
     <aside className="bg-white p-4 shadow-lg md:hidden trasition-all duration-300">
     
         <button onClick={() => setIsOpen(!isOpen)} className="block md:hidden text-gray-600 hover:text-gray-400 text-2xl">
-            <FaBars />
+            {isOpen ? <FaTimes /> : <FaBars />}
         </button>
         <ul className={`md:block space-y-4 ${isOpen ? 'block' : 'hidden'} mt-6`}>
             <li className="border-t-2">

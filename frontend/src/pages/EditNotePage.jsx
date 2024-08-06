@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "../api/axios";
+import { toast } from "react-toastify";
 
 const EditNotePage = () => {
     const { id } = useParams();
@@ -42,8 +43,10 @@ const EditNotePage = () => {
         try {
             await axios.put(`/notes/${id}/`, { title, content, category_id: category });
             navigate('/');
+            toast.success('Note updated successfully');
         } catch (error) {
             console.error('Error updating note', error);
+            toast.error('Error updating note');
         }
     };
 

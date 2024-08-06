@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from '../api/axios';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const EditCategoryForm = () => {
     const {id} = useParams();
@@ -24,8 +25,10 @@ const EditCategoryForm = () => {
         e.preventDefault();
         try {
             await axios.put(`/categories/${id}/`, { name });
+            toast.success('Category updated successfully');
         } catch (error) {
             console.error('Error updating category', error);
+            toast.error('Error updating category');
         }
     }
     

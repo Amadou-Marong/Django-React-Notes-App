@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../api/axios";
+import { toast } from "react-toastify";
 
 const AddNotePage = () => {
     const [title, setTitle] = useState("");
@@ -27,6 +28,7 @@ const AddNotePage = () => {
         try {
             await axios.post('/notes/', { title, content, category_id: category });
             navigate('/');
+            toast.success('Note added successfully');
         } catch (error) {
             console.error('Error adding note', error);
         }

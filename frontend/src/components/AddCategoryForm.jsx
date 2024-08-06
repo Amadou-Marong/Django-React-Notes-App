@@ -1,16 +1,21 @@
 import { useState } from 'react';
 import axios from '../api/axios';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AddCategoryForm = () => {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             await axios.post('/categories/', { name });
-            alert('Category added successfully!');
+            navigate('/categories');
+            toast.success('Category added successfully');
         } catch (error) {
             console.error('Error adding category:', error);
+            toast.error('Error adding category');
         }
     };
 
