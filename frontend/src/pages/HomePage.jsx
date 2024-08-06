@@ -67,6 +67,7 @@ const HomePage = () => {
                 {notes.map(note => (
                     <Link key={note.id} to={`/notes/${note.id}`} className="border p-4 my-4 rounded shadow">
                         <h2 className="font-bold my-3">{note.title}</h2> 
+                        <p className="text-sm text-gray-500"> <strong>Category:</strong> {note.category.name}</p>
                         <hr />
                         <p className="text-gray-500">{note.content.slice(0, 100)}...</p>
                     </Link>     

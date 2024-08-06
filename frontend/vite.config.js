@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/notes': 'http://localhost:8000',
+      // '/notes': 'http://localhost:8000',
+      '/notes': 'https://8jz-talented-mendel.circumeo-apps.net/',
     },
   },
 })
