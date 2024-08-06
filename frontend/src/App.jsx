@@ -10,11 +10,13 @@ import CategoryList from "./components/CategoryList";
 import AddCategoryForm from "./components/AddCategoryForm";
 import CategoriesPage from "./pages/CategoriesPage";
 import EditCategoryForm from "./components/EditCategoryForm";
+import Sidebar from "./components/Sidebar";
 
 function App() {
     return (
         <Router>
             <Navbar />
+            <Sidebar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
